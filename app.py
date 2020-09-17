@@ -41,17 +41,17 @@ def greet():
 def play():
   minimum, maximum, number_tries, number_to_guess = greet()
 
-  print(f"Ok on y va !\nnombre a trouver {number_to_guess}")
+  print(f"\nOk on y va !\n")
 
   while True:
     print(f"Le nombre à trouver se situe entre {minimum} et {maximum}")
     guess = check_number_validity('\n>>> Entrez un nombre: ')
 
-    answer = check_answer([minimum, maximum, number_tries, number_to_guess], guess)
-    if not answer:
+    result = check_guess([minimum, maximum, number_tries, number_to_guess], guess)
+    if not result:
       return
     else:
-      minimum, maximum, number_tries, number_to_guess = answer
+      minimum, maximum, number_tries, number_to_guess = result
 
 
 def replay():
@@ -66,7 +66,7 @@ def replay():
       print("Je n'ai pas compris")
 
 
-def check_answer(game_params, guess):
+def check_guess(game_params, guess):
   minimum, maximum, number_tries, number_to_guess = game_params
 
   if guess < minimum or guess > maximum:
