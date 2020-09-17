@@ -39,10 +39,7 @@ def greet():
 
 
 def play(game_params):
-  minimum = game_params[0]
-  maximum = game_params[1]
-  number_tries = game_params[2]
-  number_to_guess = game_params[3]
+  minimum, maximum, number_tries, number_to_guess = game_params
 
   print(f"Ok on y va !\nnombre a trouver {number_to_guess}")
 
