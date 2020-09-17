@@ -38,8 +38,8 @@ def greet():
   return config
 
 
-def play(game_params):
-  minimum, maximum, number_tries, number_to_guess = game_params
+def play():
+  minimum, maximum, number_tries, number_to_guess = greet()
 
   print(f"Ok on y va !\nnombre a trouver {number_to_guess}")
 
@@ -110,5 +110,4 @@ def check_answer(game_params, guess):
   ]
 
 
-config = greet()
-play(config)
+play()
